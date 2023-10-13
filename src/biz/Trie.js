@@ -1,13 +1,14 @@
 
 import TrieNode from './TrieNode';
 import {AUTO_COMPLETE_START} from '../util/constants';
-import {JavaScript, Java, Python, Cpp} from '../util/keywords';
+import {JavaScript, Java, Python, Cpp, Rust} from '../util/keywords';
 
 const EDITOR_MODES = {
   JAVASCRIPT: 'text/javascript',
   PYTHON: 'text/x-python',
   JAVA: 'text/x-java',
   CPP: 'text/x-c++src',
+  RUST: 'text/x-rust',
 };
 
 class Trie {
@@ -38,6 +39,9 @@ class Trie {
         break;
       case EDITOR_MODES.PYTHON:
         langConfig = Python;
+        break;
+      case EDITOR_MODES.RUST,
+        langConfig = Rust;
         break;
       default:
         langConfig = [];
